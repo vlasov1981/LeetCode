@@ -1,0 +1,46 @@
+def isHappy(n: int) -> bool:
+    """Write an algorithm to determine if a number n is happy.
+    A happy number is a number defined by the following process:
+    Starting with any positive integer, replace the number by the sum of the squares of its digits.
+    Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does
+    not include 1.
+    Those numbers for which this process ends in 1 are happy.
+    Return true if n is a happy number, and false if not."""
+    while True:
+        if n == 1:
+            return True
+        elif n == 7:
+            return True
+        elif n // 10 == 0 and n != 1:
+            return False
+        output = 0
+        for each in str(n):
+            output += int(each)**2
+        n = output
+
+    return True
+
+
+
+
+# tests
+if __name__ == "__main__":
+    test_n = 1
+    n = 19
+    ans = True
+    assert isHappy(n) == ans, f"Wrong in test {test_n}, your answer is " \
+                                                     f"{isHappy(n)}, "f"correct is {ans}"
+
+    test_n += 1
+    n = 2
+    ans = False
+    assert isHappy(n) == ans, f"Wrong in test {test_n}, your answer is " \
+                              f"{isHappy(n)}, "f"correct is {ans}"
+
+    test_n += 1
+    n = 7
+    ans = True
+    assert isHappy(n) == ans, f"Wrong in test {test_n}, your answer is " \
+                              f"{isHappy(n)}, "f"correct is {ans}"
+
+
