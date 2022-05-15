@@ -7,9 +7,7 @@ def isHappy(n: int) -> bool:
     Those numbers for which this process ends in 1 are happy.
     Return true if n is a happy number, and false if not."""
     while True:
-        if n == 1:
-            return True
-        elif n == 7:
+        if n == 1 or n == 7:
             return True
         elif n // 10 == 0 and n != 1:
             return False
