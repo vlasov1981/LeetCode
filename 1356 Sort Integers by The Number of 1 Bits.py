@@ -3,3 +3,4 @@ class Solution:
         return sorted(arr,key=lambda x: (bin(x).count("1"),x))
 
 # test for GitHub
+print("Dwerty test 2")
